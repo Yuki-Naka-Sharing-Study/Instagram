@@ -57,6 +57,20 @@ class ImageSelectViewController: UIViewController, UIImagePickerControllerDelega
         // UIImagePickerController画面を閉じる
         picker.dismiss(animated: true, completion: nil)
     }
+    
+    // CLImageEditorで加工が終わったときに呼ばれるメソッド
+    func imageEditor(_ editor: CLImageEditor!, didFinishEditingWith image: UIImage!) {
+        // 投稿画面を開く
+        let postViewController = self.storyboard?.instantiateViewController(withIdentifier: "Post") as! PostViewController
+        postViewController.image = image!
+        editor.present(postViewController, animated: true, completion: nil)
+    }
+
+    // CLImageEditorの編集がキャンセルされた時に呼ばれるメソッド
+    func imageEditorDidCancel(_ editor: CLImageEditor!) {
+        // CLImageEditor画面を閉じる
+        editor.dismiss(animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
