@@ -5,8 +5,8 @@
 //  Created by 仲優樹 on 2023/02/02.
 //
 
-import CLImageEditor
 import UIKit
+import CLImageEditor
 
 class ImageSelectViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLImageEditorDelegate {
     override func viewDidLoad() {
@@ -40,6 +40,8 @@ class ImageSelectViewController: UIViewController, UIImagePickerControllerDelega
     
     // 写真を撮影/選択したときに呼ばれるメソッド
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // UIImagePickerController画面を閉じる
+        picker.dismiss(animated: true, completion: nil)
         // 画像加工処理
         if info[.originalImage] != nil {
             // 撮影/選択された画像を取得する
