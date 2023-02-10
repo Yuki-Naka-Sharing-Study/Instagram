@@ -33,6 +33,7 @@
                     <tabBarItem key="tabBarItem" title="ホーム" image="home" id="1iT-d3-od1"/>
                     <connections>
                         <outlet property="tableView" destination="DWq-Jm-bbA" id="N1N-6q-uid"/>
+                        <segue destination="eou-56-IS6" kind="show" identifier="toCommentViewController" id="E2H-pt-wPP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xuC-vV-uhq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -303,6 +304,39 @@
             </objects>
             <point key="canvasLocation" x="1250" y="-127"/>
         </scene>
+        <!--Post Comment View Controller-->
+        <scene sceneID="CEC-bg-2sp">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="eou-56-IS6" customClass="PostCommentViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GdW-BQ-EMb">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="C1s-Zr-B5W">
+                                <rect key="frame" x="52" y="96" width="289" height="204"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJH-Nd-OdN">
+                                <rect key="frame" x="159" y="374" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1lV-t0-fab"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VXr-pM-5CV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dHY-G1-Qqk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1373.2824427480916" y="1431.6901408450706"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="gLa-Fw-8vc">
             <objects>
@@ -329,6 +363,9 @@
         <image name="camera" width="25" height="25"/>
         <image name="home" width="25" height="25"/>
         <image name="setting" width="25" height="25"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

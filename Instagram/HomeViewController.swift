@@ -71,6 +71,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         // セル内のボタンのアクションをソースコードで設定する
         cell.likeButton.addTarget(self, action:#selector(handleButton(_:forEvent:)), for: .touchUpInside)
+        //「新しく追加したコード」コメントボタンがタップされた時呼ばれる①
+        cell.commentButton.addTarget(self, action:#selector(handleCommentButton(_:forEvent:)), for: .touchUpInside)
 
         return cell
     }
@@ -102,6 +104,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
            let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
            postRef.updateData(["likes": updateValue])
        }
+   }
+    
+    //「新しく追加したコード」コメントボタンがタップされた時呼ばれる②
+   @objc func handleCommentButton(_ sender: UIButton, forEvent event: UIEvent) {
+       // ボタンをタップした時に画面遷移する処理を書く
+       self.performSegue(withIdentifier: "toCommentViewController", sender: self)
    }
     
     /*
