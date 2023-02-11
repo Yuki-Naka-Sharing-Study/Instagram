@@ -15,7 +15,9 @@ class PostCommentViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func postCommentButton(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 
