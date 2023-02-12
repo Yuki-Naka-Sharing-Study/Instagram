@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class PostCommentViewController: UIViewController {
 
@@ -16,6 +17,9 @@ class PostCommentViewController: UIViewController {
     }
     
     @IBAction func postCommentButton(_ sender: Any) {
+        // ユーザーが入力したコメント内容をFirestoreに保存
+        let postRef = Firestore.firestore().collection(Const.PostPath).document()
+        self.dismiss(animated: true, completion: nil)
     }
     
     /*
