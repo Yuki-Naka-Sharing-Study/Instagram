@@ -33,7 +33,6 @@
                     <tabBarItem key="tabBarItem" title="ホーム" image="home" id="1iT-d3-od1"/>
                     <connections>
                         <outlet property="tableView" destination="DWq-Jm-bbA" id="N1N-6q-uid"/>
-                        <segue destination="eou-56-IS6" kind="show" identifier="toCommentViewController" id="E2H-pt-wPP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xuC-vV-uhq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -309,7 +308,7 @@
             <objects>
                 <viewController storyboardIdentifier="PostCommentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eou-56-IS6" customClass="PostCommentViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GdW-BQ-EMb">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="コメントを入力してください。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="C1s-Zr-B5W">
