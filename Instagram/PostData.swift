@@ -24,6 +24,8 @@ class PostData: NSObject {
         self.name = postDic["name"] as? String
         
         self.caption = postDic["caption"] as? String
+        
+//        self.comments = postData["comments"] as? String
 
         let timestamp = postDic["date"] as? Timestamp
         self.date = timestamp?.dateValue()

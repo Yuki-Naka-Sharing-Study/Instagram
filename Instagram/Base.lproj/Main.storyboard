@@ -307,7 +307,7 @@
         <!--Post Comment View Controller-->
         <scene sceneID="CEC-bg-2sp">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="eou-56-IS6" customClass="PostCommentViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostCommentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eou-56-IS6" customClass="PostCommentViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GdW-BQ-EMb">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -334,6 +334,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="VXr-pM-5CV"/>
+                    <connections>
+                        <outlet property="textView" destination="C1s-Zr-B5W" id="Q9x-rr-2Js"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dHY-G1-Qqk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

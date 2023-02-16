@@ -9,16 +9,29 @@ import UIKit
 import Firebase
 
 class PostCommentViewController: UIViewController {
+    
+    // 画面遷移先にPostDataを受け取るための変数を宣言
+    var ReceiveData : PostData!
+    // 更新データを作成する
+    var updateValue: FieldValue!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    @IBOutlet weak var textView: UITextView!
     
     @IBAction func postCommentButton(_ sender: Any) {
         // ユーザーが入力したコメント内容をFirestoreに保存
-        let postRef = Firestore.firestore().collection(Const.PostPath).document()
+        
+        // commentsに更新データを書き込む
+        updateValue = FieldValue.arrayUnion([self.textView.text!])
+        
+        let postRef = Firestore.firestore().collection(Const.PostPath).document(self.textView.text)
+        postRef.updateData(["commnets": updateValue!])
+        
+        // "comment": self.textView.text!
         self.dismiss(animated: true, completion: nil)
     }
     

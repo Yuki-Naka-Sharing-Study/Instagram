@@ -109,7 +109,28 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     //「新しく追加したコード」コメントボタンがタップされた時呼ばれる②
    @objc func handleCommentButton(_ sender: UIButton, forEvent event: UIEvent) {
        // ボタンをタップした時に画面遷移する処理を書く
-       self.performSegue(withIdentifier: "toCommentViewController", sender: self)
+       
+       // タップされたセルのインデックスを求める
+       let touch = event.allTouches?.first
+       let point = touch!.location(in: self.tableView)
+       let indexPath = tableView.indexPathForRow(at: point)
+
+       // 配列からタップされたインデックスのデータを取り出す
+       let postData = postArray[indexPath!.row]
+       
+       // データを渡す
+       // storyboardのインスタンス取得
+       let storyboard: UIStoryboard = self.storyboard!
+
+       // 遷移先ViewControllerのインスタンス取得
+       let nextView = storyboard.instantiateViewController(withIdentifier: "toCommentViewController") as! PostCommentViewController
+
+       // ①値の設定　「何の値」を「どの遷移元」から「どの遷移先」へ
+       // 画面遷移先(PostCommentViewController)の変数にpostDataを渡す
+       nextView.ReceiveData = postData
+       
+       // ③画面遷移
+       self.present(nextView, animated: true, completion: nil)
    }
     
     /*
