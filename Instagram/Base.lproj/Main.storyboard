@@ -306,7 +306,7 @@
         <!--Post Comment View Controller-->
         <scene sceneID="CEC-bg-2sp">
             <objects>
-                <viewController storyboardIdentifier="PostCommentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eou-56-IS6" customClass="PostCommentViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostComment" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eou-56-IS6" customClass="PostCommentViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GdW-BQ-EMb">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
