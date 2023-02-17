@@ -123,7 +123,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
        let storyboard: UIStoryboard = self.storyboard!
 
        // 遷移先ViewControllerのインスタンス取得
-       let nextView = storyboard.instantiateViewController(withIdentifier: "toCommentViewController") as! PostCommentViewController
+       let nextView = storyboard.instantiateViewController(withIdentifier: "PostComment") as! PostCommentViewController
 
        // ①値の設定　「何の値」を「どの遷移元」から「どの遷移先」へ
        // 画面遷移先(PostCommentViewController)の変数にpostDataを渡す

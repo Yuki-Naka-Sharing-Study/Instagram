@@ -28,7 +28,7 @@ class PostCommentViewController: UIViewController {
         // commentsに更新データを書き込む
         updateValue = FieldValue.arrayUnion([self.textView.text!])
         
-        let postRef = Firestore.firestore().collection(Const.PostPath).document(self.textView.text)
+        let postRef = Firestore.firestore().collection(Const.PostPath).document(ReceiveData.id)
         postRef.updateData(["commnets": updateValue!])
         
         // "comment": self.textView.text!
