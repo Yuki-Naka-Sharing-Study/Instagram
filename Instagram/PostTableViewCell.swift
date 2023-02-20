@@ -62,7 +62,7 @@ class PostTableViewCell: UITableViewCell {
         self.captionLabel.text = "\(postData.name!) : \(postData.caption!)"
         
         // PostDataに入っているコメント内容をUILabelに表示
-         = postData.comment
+        self.commentLabel.text = "\(postData.comments)"
         
     }
 }
