@@ -13,6 +13,7 @@ class PostData: NSObject {
     var name: String?
     var caption: String?
     var date: Date?
+    var comments: [String] = []
     var likes: [String] = []
     var isLiked: Bool = false
 
@@ -25,7 +26,9 @@ class PostData: NSObject {
         
         self.caption = postDic["caption"] as? String
         
-//        self.comments = postData["comments"] as? String
+        if let comments = postDic["comments"] as? [String] {
+            self.comments = comments
+        }
 
         let timestamp = postDic["date"] as? Timestamp
         self.date = timestamp?.dateValue()

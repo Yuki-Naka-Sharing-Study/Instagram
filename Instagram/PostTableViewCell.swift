@@ -12,11 +12,12 @@ class PostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var likeButton: UIButton!
-    @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var likeLabel: UILabel!
+    @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
-
+    @IBOutlet weak var commentLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -34,18 +35,6 @@ class PostTableViewCell: UITableViewCell {
         postImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
         let imageRef = Storage.storage().reference().child(Const.ImagePath).child(postData.id + ".jpg")
         postImageView.sd_setImage(with: imageRef)
-
-        // キャプションの表示
-        self.captionLabel.text = "\(postData.name!) : \(postData.caption!)"
-
-        // 日時の表示
-        self.dateLabel.text = ""
-        if let date = postData.date {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd HH:mm"
-            let dateString = formatter.string(from: date)
-            self.dateLabel.text = dateString
-        }
         
         // いいね数の表示
         let likeNumber = postData.likes.count
@@ -59,6 +48,21 @@ class PostTableViewCell: UITableViewCell {
             let buttonImage = UIImage(named: "like_none")
             self.likeButton.setImage(buttonImage, for: .normal)
         }
+        
+        // 日時の表示
+        self.dateLabel.text = ""
+        if let date = postData.date {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm"
+            let dateString = formatter.string(from: date)
+            self.dateLabel.text = dateString
+        }
+
+        // キャプションの表示
+        self.captionLabel.text = "\(postData.name!) : \(postData.caption!)"
+        
+        // PostDataに入っているコメント内容をUILabelに表示
+         = postData.comment
         
     }
 }
