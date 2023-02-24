@@ -25,13 +25,14 @@ class PostCommentViewController: UIViewController {
     @IBAction func postCommentButton(_ sender: Any) {
         // ユーザーが入力したコメント内容をFirestoreに保存
         
-        // commentsに更新データを書き込む
-        updateValue = FieldValue.arrayUnion([self.textView.text!])
+        // commentsに更新データを書き込む　文字列を組み立てる　comment入力者名 : コメント内容　ログインしている人の名前=comment入力者名
+        let name = Auth.auth().currentUser?.displayName
+        let text = self.textView.text
+        updateValue = FieldValue.arrayUnion(["\(name!):\(text!)"])
         
         let postRef = Firestore.firestore().collection(Const.PostPath).document(ReceiveData.id)
-        postRef.updateData(["commnets": updateValue!])
+        postRef.updateData(["comments": updateValue!])
         
-        // "comment": self.textView.text!
         self.dismiss(animated: true, completion: nil)
     }
     

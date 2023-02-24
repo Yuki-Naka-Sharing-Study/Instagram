@@ -26,9 +26,12 @@ class PostData: NSObject {
         
         self.caption = postDic["caption"] as? String
         
+        print("ブレークポイント前")
+        
         if let comments = postDic["comments"] as? [String] {
             self.comments = comments
         }
+        print("ブレークポイント後")
 
         let timestamp = postDic["date"] as? Timestamp
         self.date = timestamp?.dateValue()

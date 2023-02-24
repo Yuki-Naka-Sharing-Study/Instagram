@@ -64,5 +64,12 @@ class PostTableViewCell: UITableViewCell {
         // PostDataに入っているコメント内容をUILabelに表示
         self.commentLabel.text = "\(postData.comments)"
         
+        // 【最後の課題】配列を一行ずつにする
+        let comments = ["\(self.commentLabel.text!)"]
+        var commentString = ""
+        for comment in comments {
+            commentString += comment
+            commentString += "\n"
+        }
     }
 }
