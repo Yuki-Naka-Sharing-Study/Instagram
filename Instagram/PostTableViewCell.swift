@@ -18,6 +18,8 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     
+    var commentString = ""
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -66,7 +68,7 @@ class PostTableViewCell: UITableViewCell {
         
         // 【最後の課題】配列を一行ずつにする
         let comments = ["\(self.commentLabel.text!)"]
-        var commentString = ""
+        
         for comment in comments {
             commentString += comment
             commentString += "\n"
