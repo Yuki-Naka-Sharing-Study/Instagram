@@ -18,8 +18,6 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     
-    var commentString = ""
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -63,15 +61,17 @@ class PostTableViewCell: UITableViewCell {
         // キャプションの表示
         self.captionLabel.text = "\(postData.name!) : \(postData.caption!)"
         
-        // PostDataに入っているコメント内容をUILabelに表示
-        self.commentLabel.text = "\(postData.comments)"
+        let comments = postData.comments
         
-        // 【最後の課題】配列を一行ずつにする
-        let comments = ["\(self.commentLabel.text!)"]
+        // コメント内容を1行1コメントの文字列の形に変換する処理
+        var commentString = ""
         
         for comment in comments {
             commentString += comment
             commentString += "\n"
         }
+        
+        // PostDataに入っているコメント内容をUILabelに表示
+        self.commentLabel.text = commentString
     }
 }
